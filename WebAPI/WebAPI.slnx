@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WebAPI/WebAPI.vcxproj" Id="4962d9b1-35e8-406d-b588-2843258f6db2" />
+</Solution>

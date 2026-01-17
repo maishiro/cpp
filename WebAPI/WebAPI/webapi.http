@@ -1,0 +1,12 @@
+####
+GET http://localhost:8888/weather
+
+
+####
+POST http://localhost:8888/echo
+Content-Type: application/json
+
+{
+  "message": "Hello, World!"
+}
+
