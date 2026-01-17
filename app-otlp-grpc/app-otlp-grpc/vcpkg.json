@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    {
+      "name": "opentelemetry-cpp",
+      "features": [
+        "otlp-grpc"
+      ]
+    }
+  ]
+}
