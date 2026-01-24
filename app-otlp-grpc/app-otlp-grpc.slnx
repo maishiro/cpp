@@ -1,6 +1,5 @@
 <Solution>
   <Configurations>
-    <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
   <Project Path="app-otlp-grpc/app-otlp-grpc.vcxproj" Id="9d0be773-55eb-4507-8668-2c191e321285" />
