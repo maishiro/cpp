@@ -1,0 +1,7 @@
+﻿{
+  "dependencies": [
+    "boost-beast",
+    "nlohmann-json",
+    "spdlog"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "logging": {
+    "level": "info",
+    "console_enabled": true,
+    "file_enabled": true,
+    "file_path": "logs/websocket_api.log",
+    "max_file_size": 10485760,
+    "max_files": 5,
+    "pattern": "[%Y-%m-%d %H:%M:%S.%e] [%l] %v"
+  }
+}

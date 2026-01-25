@@ -1,0 +1,160 @@
+### WebSocket API - REST Client テストファイル
+### VS Code REST Client 拡張で使用してください
+### 拡張: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+@baseUrl = http://localhost:8080
+@contentType = application/json
+
+### 1. ヘルスチェック - サーバーが起動しているか確認
+GET {{baseUrl}}/
+
+### 2. シンプルなイベント送信
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "notification",
+  "data": {
+    "message": "Hello WebSocket API"
+  }
+}
+
+### 3. ユーザーログインイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "user_action",
+  "data": {
+    "action": "login",
+    "user_id": 123,
+    "username": "john_doe",
+    "timestamp": "2026-01-25T10:30:00Z"
+  }
+}
+
+### 4. チャットメッセージイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "chat_message",
+  "data": {
+    "user_id": 123,
+    "username": "john_doe",
+    "channel": "general",
+    "message": "Hello everyone!",
+    "message_id": "msg_001"
+  }
+}
+
+### 5. システムアラートイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "system_alert",
+  "data": {
+    "level": "warning",
+    "title": "High Memory Usage",
+    "description": "Memory usage exceeded 80%",
+    "timestamp": "2026-01-25T10:30:00Z"
+  }
+}
+
+### 6. ユーザーログアウトイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "user_action",
+  "data": {
+    "action": "logout",
+    "user_id": 123,
+    "username": "john_doe"
+  }
+}
+
+### 7. 複数フィールドを持つカスタムイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "custom_event",
+  "data": {
+    "event_id": "evt_12345",
+    "source": "mobile_app",
+    "version": "1.0.0",
+    "details": {
+      "device_id": "device_001",
+      "os": "iOS",
+      "app_version": "2.5.1"
+    },
+    "tags": ["mobile", "ios", "app_event"]
+  }
+}
+
+### 8. エラーハンドリング - 不正な形式（テスト用）
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "invalid": "missing required fields"
+}
+
+### 9. ストレステスト用 - 短期連続送信
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "stress_test",
+  "data": {
+    "test_id": 1,
+    "message": "Stress test message 1"
+  }
+}
+
+###
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "stress_test",
+  "data": {
+    "test_id": 2,
+    "message": "Stress test message 2"
+  }
+}
+
+###
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "stress_test",
+  "data": {
+    "test_id": 3,
+    "message": "Stress test message 3"
+  }
+}
+
+### 10. JSONペイロードが大きいイベント
+POST {{baseUrl}}/api/event
+Content-Type: {{contentType}}
+
+{
+  "type": "large_payload",
+  "data": {
+    "items": [
+      {"id": 1, "name": "item1", "description": "This is item 1"},
+      {"id": 2, "name": "item2", "description": "This is item 2"},
+      {"id": 3, "name": "item3", "description": "This is item 3"},
+      {"id": 4, "name": "item4", "description": "This is item 4"},
+      {"id": 5, "name": "item5", "description": "This is item 5"}
+    ],
+    "metadata": {
+      "count": 5,
+      "version": "1.0"
+    }
+  }
+}
