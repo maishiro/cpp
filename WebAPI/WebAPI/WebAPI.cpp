@@ -1,8 +1,6 @@
 ﻿#include <iostream>
-#include "httplib.h"
+#include <httplib.h>
 #include <nlohmann/json.hpp>
-
-#pragma comment(lib, "cpp-httplib.lib")
 
 using namespace std;
 using json = nlohmann::json;
