@@ -1,0 +1,4 @@
+{
+  "db_type": "postgresql",
+  "connection_string": "host=localhost dbname=test user=postgres password=password"
+}

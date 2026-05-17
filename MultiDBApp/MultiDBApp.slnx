@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MultiDBApp/MultiDBApp.vcxproj" Id="A1B2C3D4-E5F6-4321-8765-0987654321AB" />
+</Solution>

@@ -1,0 +1,15 @@
+{
+  "name": "multi-db-app",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "soci",
+    {
+      "name": "soci",
+      "features": [
+        "postgresql",
+        "odbc"
+      ]
+    },
+    "nlohmann-json"
+  ]
+}
