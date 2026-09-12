@@ -1,0 +1,18 @@
+@url=http://127.0.0.1:5001
+
+###
+GET {{url}}/hi
+
+
+###
+GET {{url}}/numbers/1232123456
+
+
+###
+GET {{url}}/body-header-param?opt1=val1&tag=a&tag=b
+Content-Type: application/json
+
+{
+    "key1": "val1"
+}
+
